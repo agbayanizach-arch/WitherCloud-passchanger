@@ -1,0 +1,6 @@
+{
+  "webhook_url": "https://discord.com/api/webhooks/1558677588464107520/RDZC1Y66x9uOV5aT5ithgCqLprWY9ubfbxT3blzctHMO0cOJZ2cZaVqba5zUi-rc8yWL",
+  "bot_enabled": true,
+  "max_concurrent_users": 100,
+  "captcha_channel_id": "1545246768298725446"
+}
