@@ -1,0 +1,45 @@
+"""
+Safe Discord bot startup template for Render.
+
+Render environment variable:
+    DISCORD_TOKEN = your Discord bot token
+
+Render Build Command:
+    pip install -r requirements.txt
+
+Render Start Command:
+    python automation.acsr
+
+This is a minimal template. It does not include the functionality from your
+uploaded bot file.
+"""
+
+import os
+import discord
+from discord.ext import commands
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+
+if not TOKEN:
+    raise RuntimeError(
+        "Missing DISCORD_TOKEN environment variable. "
+        "Add it in Render > Environment."
+    )
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix=".", intents=intents)
+
+
+@bot.event
+async def on_ready():
+    print(f"Bot is online as {bot.user}")
+
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send("Pong!")
+
+
+bot.run(TOKEN)
